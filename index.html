@@ -1,0 +1,736 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Laura Pociello Esmel — Diseñadora Gráfica</title>
+  <meta name="description" content="Diseñadora gráfica especializada en branding, social media, print y web. Basada en España, disponible en todo el mundo.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,400;0,600;0,700;0,800;1,400&family=Playfair+Display:ital,wght@0,700;1,400;1,700&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg:#F5F2EB; --bg2:#EAE5D8; --dark:#242133; --dark2:#1D1C2A; --red:#C63535;
+      --muted:#7A7870; --border:#DEDAD3; --white:#FFFFFF; --surface:#ECEAE2;
+      --fh:'Montserrat',sans-serif; --fi:'Playfair Display',serif; --fb:'Inter',sans-serif; --r:6px;
+    }
+    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+    html{scroll-behavior:smooth;font-size:15px}
+    body{background:var(--bg);color:var(--dark);font-family:var(--fb);line-height:1.65;overflow-x:hidden}
+
+    /* NAV */
+    nav{position:sticky;top:0;z-index:100;background:rgba(245,242,235,.93);backdrop-filter:blur(14px);border-bottom:1px solid var(--border);display:flex;align-items:center;justify-content:space-between;padding:0 48px;height:60px}
+    .nav-logo{font-family:var(--fh);font-weight:800;font-size:14px;letter-spacing:.04em;color:var(--dark);text-decoration:none;display:flex;align-items:center;gap:10px}
+    .nav-logo img{width:32px;height:32px;border-radius:50%;object-fit:cover}
+    .nav-logo span{color:var(--red)}
+    nav ul{list-style:none;display:flex;gap:32px;align-items:center}
+    nav ul a{color:var(--muted);text-decoration:none;font-size:13px;transition:color .2s}
+    nav ul a:hover{color:var(--dark)}
+    .nav-cta{background:var(--red)!important;color:#fff!important;padding:8px 18px;border-radius:var(--r);font-weight:600}
+    .nav-cta:hover{opacity:.88}
+
+    /* HERO */
+    .hero{padding:80px 48px 72px;max-width:1200px;margin:0 auto}
+    .hero-label{display:inline-flex;align-items:center;gap:8px;font-size:12px;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);margin-bottom:28px}
+    .hero-label::before{content:'';width:7px;height:7px;border-radius:50%;background:#3BAD6E;box-shadow:0 0 0 3px rgba(59,173,110,.18);animation:blink 2s infinite}
+    @keyframes blink{0%,100%{opacity:1}50%{opacity:.3}}
+    h1{font-family:var(--fh);font-size:clamp(52px,8.5vw,104px);font-weight:800;line-height:.94;letter-spacing:-.03em}
+    h1 em{font-family:var(--fi);font-style:italic;color:var(--red);position:relative;display:inline-block}
+    h1 em::after{content:'';position:absolute;inset:0;background:linear-gradient(105deg,transparent 40%,rgba(255,255,255,.6) 50%,transparent 60%);background-size:200% 100%;animation:sweep 3.5s ease infinite;pointer-events:none}
+    @keyframes sweep{0%{background-position:180% center}60%,100%{background-position:-60% center}}
+    .hero-row{display:flex;justify-content:space-between;align-items:flex-end;margin-top:36px;flex-wrap:wrap;gap:24px}
+    .hero-sub{font-size:15px;color:var(--muted);max-width:420px;line-height:1.75}
+    .hero-btns{display:flex;gap:10px;flex-wrap:wrap}
+
+    /* BUTTONS */
+    .btn{display:inline-flex;align-items:center;gap:8px;font-family:var(--fh);font-size:13px;font-weight:700;letter-spacing:.04em;text-transform:uppercase;text-decoration:none;padding:13px 24px;border-radius:var(--r);border:none;cursor:pointer;transition:all .2s}
+    .btn-red{background:var(--red);color:#fff}
+    .btn-red:hover{background:#a82b2b;transform:translateY(-1px);box-shadow:0 6px 20px rgba(198,53,53,.28)}
+    .btn-outline{background:transparent;color:var(--dark);border:1.5px solid var(--border)}
+    .btn-outline:hover{border-color:var(--dark);background:var(--bg2)}
+    .btn-wa{background:#25D366;color:#fff}
+    .btn-wa:hover{background:#1bbd5a;transform:translateY(-1px);box-shadow:0 6px 20px rgba(37,211,102,.28)}
+    .btn-wa svg,.btn-cal svg{width:16px;height:16px;flex-shrink:0}
+    .btn-cal{background:var(--bg2);color:var(--dark);border:1.5px solid var(--border)}
+    .btn-cal:hover{border-color:#006BFF;color:#006BFF}
+
+    /* MARQUEE */
+    .mq-wrap{border-top:1px solid var(--border);border-bottom:1px solid var(--border);overflow:hidden;padding:12px 0;background:var(--white)}
+    .mq-track{display:flex;gap:36px;width:max-content;animation:mq 20s linear infinite}
+    .mq-track span{font-family:var(--fh);font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:var(--muted);white-space:nowrap}
+    .mq-track .dot{color:var(--red)}
+    @keyframes mq{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+
+    /* SECTION */
+    section{padding:88px 48px}
+    .eyebrow{font-family:var(--fh);font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:var(--red);margin-bottom:10px}
+    h2{font-family:var(--fh);font-size:clamp(32px,4.5vw,54px);font-weight:800;line-height:1.05;letter-spacing:-.02em}
+    h2 em{font-family:var(--fi);font-style:italic;color:var(--red)}
+
+    /* ABOUT */
+    .about-bg{background:var(--dark);color:#F0EDE6;}
+    .about-layout{display:grid;grid-template-columns:1fr 1fr;gap:72px;align-items:center;max-width:1200px;margin:0 auto}
+    .about-bg .eyebrow{color:#E08080}
+    .about-bg h2{color:#F0EDE6}
+    .about-bg h2 em{color:#E08080}
+    .about-text{font-size:15px;line-height:1.85;color:#A8A49E;margin-top:20px}
+    .about-text p+p{margin-top:16px}
+    .about-text strong{color:#F0EDE6;font-weight:600}
+    .about-tags{display:flex;gap:8px;flex-wrap:wrap;margin-top:24px}
+    .about-tag{font-size:11px;letter-spacing:.1em;text-transform:uppercase;border:1px solid rgba(255,255,255,.15);padding:5px 12px;border-radius:2px;color:#A8A49E}
+    .about-photo-box{width:100%;aspect-ratio:1/1;border-radius:8px;overflow:hidden;position:relative}
+    .about-photo-box img{width:100%;height:100%;object-fit:cover;object-position:center top}
+    .about-photo-label{position:absolute;bottom:16px;left:16px;font-family:var(--fh);font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:rgba(240,237,230,.8);background:rgba(28,26,23,.5);backdrop-filter:blur(4px);padding:5px 10px;border-radius:3px}
+    .stats-row{display:flex;gap:32px;flex-wrap:wrap;margin-top:28px}
+    .stat-num{font-family:var(--fh);font-size:32px;font-weight:800;color:#F0EDE6;line-height:1}
+    .stat-num span{color:#E08080}
+    .stat-lbl{font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:#5A5650;margin-top:3px}
+
+    /* PORTFOLIO */
+    .portfolio-section{padding:88px 0 80px}
+    .portfolio-header{padding:0 48px;display:flex;justify-content:space-between;align-items:flex-end;margin-bottom:40px}
+    .portfolio-hint{font-size:12px;color:var(--muted);letter-spacing:.05em;display:flex;align-items:center;gap:6px}
+    .portfolio-hint svg{width:20px;height:20px}
+    .portfolio-scroll{overflow-x:auto;scroll-snap-type:x mandatory;-webkit-overflow-scrolling:touch;cursor:grab;scrollbar-width:thin;scrollbar-color:var(--border) transparent;padding:8px 0 32px}
+    .portfolio-scroll:active{cursor:grabbing}
+    .portfolio-scroll::-webkit-scrollbar{height:4px}
+    .portfolio-scroll::-webkit-scrollbar-thumb{background:var(--border);border-radius:4px}
+    .portfolio-track{display:flex;gap:20px;padding:0 48px;width:max-content}
+    .port-card{scroll-snap-align:start;width:340px;flex-shrink:0;border-radius:8px;overflow:hidden;background:var(--white);border:1px solid var(--border);transition:transform .3s,box-shadow .3s}
+    .port-card:hover{transform:translateY(-6px);box-shadow:0 20px 48px rgba(28,26,23,.13)}
+    .port-img{width:100%;aspect-ratio:4/3;position:relative;overflow:hidden}
+    .port-img img{width:100%;height:100%;object-fit:cover;transition:transform .5s ease;display:block}
+    .port-card:hover .port-img img{transform:scale(1.05)}
+    .port-body{padding:20px 22px 22px}
+    .port-tag{font-size:10px;letter-spacing:.12em;text-transform:uppercase;color:var(--red);margin-bottom:6px}
+    .port-name{font-family:var(--fh);font-size:17px;font-weight:700;color:var(--dark);margin-bottom:8px}
+    .port-desc{font-size:12px;color:var(--muted);line-height:1.6}
+    .port-badge{position:absolute;top:12px;right:12px;font-size:10px;letter-spacing:.1em;text-transform:uppercase;padding:4px 10px;border-radius:20px;backdrop-filter:blur(8px)}
+    .pb-brand{background:rgba(28,26,23,.5);border:1px solid rgba(255,255,255,.2);color:rgba(255,255,255,.9)}
+    .pb-remote{background:rgba(59,173,110,.2);border:1px solid rgba(59,173,110,.4);color:#6DE0A5}
+    .pb-print{background:rgba(198,53,53,.2);border:1px solid rgba(198,53,53,.4);color:#F0A0A0}
+    .pb-social{background:rgba(100,100,220,.2);border:1px solid rgba(100,100,220,.4);color:#A0A0F0}
+
+    /* SERVICES */
+    .services-bg{background:var(--surface)}
+    .services-layout{display:grid;grid-template-columns:1fr 1.4fr;gap:80px;align-items:start;max-width:1200px;margin:0 auto}
+    .services-sticky{position:sticky;top:80px}
+    .services-intro{font-size:14px;color:var(--muted);line-height:1.8;margin-top:20px}
+    details.accordion{border-top:1px solid var(--border);overflow:hidden}
+    details.accordion:last-child{border-bottom:1px solid var(--border)}
+    details.accordion summary{list-style:none;display:flex;justify-content:space-between;align-items:center;padding:22px 0;cursor:pointer;user-select:none;gap:16px}
+    details.accordion summary::-webkit-details-marker{display:none}
+    details.accordion summary:hover .acc-title{color:var(--red)}
+    .acc-title{font-family:var(--fh);font-size:17px;font-weight:700;color:var(--dark);transition:color .2s}
+    .acc-icon{width:28px;height:28px;border:1.5px solid var(--border);border-radius:50%;display:flex;align-items:center;justify-content:center;flex-shrink:0;transition:border-color .2s,transform .3s,background .2s;color:var(--muted)}
+    details[open] .acc-icon{border-color:var(--red);background:var(--red);color:#fff;transform:rotate(45deg)}
+    .acc-body{padding:0 0 24px;font-size:13px;color:var(--muted);line-height:1.75;animation:fadeIn .25s ease}
+    .acc-body ul{padding-left:16px;margin-top:10px}
+    .acc-body ul li{margin-bottom:5px}
+    @keyframes fadeIn{from{opacity:0;transform:translateY(-6px)}to{opacity:1;transform:none}}
+
+    /* EXPERIENCE */
+    .exp-section{background:var(--bg)}
+    .exp-layout{max-width:1200px;margin:0 auto}
+    .exp-grid{display:grid;grid-template-columns:1fr 1fr;gap:0 64px;margin-top:56px}
+    .exp-col-title{font-family:var(--fh);font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:var(--muted);padding-bottom:16px;border-bottom:2px solid var(--border)}
+    .exp-col-title.red{border-color:var(--red);color:var(--red)}
+    details.exp-item{border-bottom:1px solid var(--border)}
+    details.exp-item summary{list-style:none;display:flex;justify-content:space-between;align-items:center;padding:20px 0;cursor:pointer;gap:12px}
+    details.exp-item summary::-webkit-details-marker{display:none}
+    .exp-sl{flex:1}
+    .exp-co{font-family:var(--fh);font-size:15px;font-weight:700;color:var(--dark);display:flex;align-items:center;gap:8px}
+    .exp-badge{font-size:9px;letter-spacing:.1em;text-transform:uppercase;border:1px solid var(--border);padding:2px 7px;border-radius:3px;color:var(--muted)}
+    .exp-badge.remote{border-color:#3BAD6E;color:#3BAD6E}
+    .exp-period{font-size:11px;color:var(--muted);margin-top:3px}
+    .exp-arrow{width:24px;height:24px;flex-shrink:0;color:var(--muted);transition:transform .3s,color .2s}
+    details[open] .exp-arrow{transform:rotate(90deg);color:var(--red)}
+    .exp-body{padding:0 0 20px 2px;font-size:13px;color:var(--muted);line-height:1.75;animation:fadeIn .25s ease}
+    .exp-rl{font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--red);margin-bottom:10px;font-family:var(--fh)}
+    .exp-body ul{padding-left:16px}
+    .exp-body ul li{margin-bottom:5px}
+    .edu-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:56px}
+    .edu-card{border:1px solid var(--border);padding:18px 20px;border-radius:var(--r);background:var(--white)}
+    .edu-card h4{font-family:var(--fh);font-size:13px;font-weight:700;margin-bottom:5px}
+    .edu-card p{font-size:12px;color:var(--muted)}
+
+    /* SKILLS TABS */
+    .skills-bg{background:var(--surface)}
+    .skills-inner{max-width:1200px;margin:0 auto}
+    .tab-nav{display:flex;border-bottom:2px solid var(--border);margin-top:44px;margin-bottom:36px}
+    .tab-btn{font-family:var(--fh);font-size:12px;letter-spacing:.08em;text-transform:uppercase;font-weight:700;padding:12px 20px;border:none;background:none;cursor:pointer;color:var(--muted);position:relative;transition:color .2s}
+    .tab-btn::after{content:'';position:absolute;bottom:-2px;left:0;right:0;height:2px;background:var(--red);transform:scaleX(0);transition:transform .2s}
+    .tab-btn.active{color:var(--dark)}
+    .tab-btn.active::after{transform:scaleX(1)}
+    .tab-panel{display:none}
+    .tab-panel.active{display:block;animation:fadeIn .25s ease}
+    .skill-item{display:flex;align-items:center;padding:12px 0;border-bottom:1px solid var(--border);gap:16px}
+    .skill-item:last-child{border-bottom:none}
+    .skill-name{flex:1;font-size:14px;color:var(--dark)}
+    .skill-bar{width:120px;height:4px;background:var(--border);border-radius:4px;overflow:hidden}
+    .skill-fill{height:100%;background:linear-gradient(90deg,var(--red),#E07070);border-radius:4px;width:0;transition:width 1s cubic-bezier(.4,0,.2,1)}
+    .skill-pct{font-family:var(--fh);font-size:12px;font-weight:700;color:var(--muted);min-width:36px;text-align:right}
+    .ptag{font-size:11px;letter-spacing:.07em;border:1px solid var(--border);padding:5px 12px;border-radius:20px;color:var(--muted);transition:all .2s}
+    .ptag:hover{border-color:var(--red);color:var(--red)}
+    .sg3{display:grid;grid-template-columns:repeat(3,1fr);gap:32px}
+
+    /* CONTACT */
+    .contact-bg{background:var(--dark2)}
+    .contact-layout{display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:start;max-width:1200px;margin:0 auto}
+    .contact-bg .eyebrow{color:#E08080}
+    .contact-bg h2{color:#F0EDE6}
+    .contact-bg h2 em{color:#E08080}
+    .contact-lead{font-size:14px;color:#7A7670;line-height:1.85;margin-top:20px;max-width:380px}
+    .contact-detail{display:flex;flex-direction:column;gap:12px;margin-top:32px}
+    .contact-row{display:flex;align-items:center;gap:12px;font-size:13px;color:#7A7670}
+    .contact-row strong{color:#D0CCC5;min-width:90px}
+    .contact-row a{color:#7A7670;text-decoration:none}
+    .contact-row a:hover{color:#D0CCC5}
+    .contact-btns{display:flex;gap:10px;flex-wrap:wrap;margin-top:28px}
+    .socials{display:flex;gap:8px;margin-top:24px;flex-wrap:wrap}
+    .social-link{display:inline-flex;align-items:center;gap:7px;border:1px solid rgba(255,255,255,.12);padding:9px 16px;border-radius:var(--r);color:#7A7670;text-decoration:none;font-size:12px;font-family:var(--fh);font-weight:700;letter-spacing:.05em;text-transform:uppercase;transition:all .2s}
+    .social-link svg{width:15px;height:15px}
+    .social-link:hover{color:#F0EDE6;border-color:rgba(255,255,255,.3)}
+    .social-link.li:hover{border-color:#0a66c2;color:#5C9FD6}
+    .social-link.ig:hover{border-color:#e1306c;color:#F07090}
+    .contact-form{display:flex;flex-direction:column;gap:14px}
+    .contact-form label{font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:#5A5650;display:block;margin-bottom:6px}
+    .contact-form input,.contact-form textarea{width:100%;background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.12);color:#F0EDE6;padding:12px 16px;font-family:var(--fb);font-size:13px;outline:none;border-radius:var(--r);transition:border-color .2s}
+    .contact-form input:focus,.contact-form textarea:focus{border-color:rgba(198,53,53,.6)}
+    .contact-form textarea{min-height:120px;resize:vertical}
+    .contact-form input::placeholder,.contact-form textarea::placeholder{color:#3A3833}
+
+    /* FOOTER */
+    footer{background:#171623;padding:24px 48px;display:flex;justify-content:space-between;align-items:center;font-size:12px;color:#4A4844;flex-wrap:wrap;gap:12px}
+    footer a{color:#4A4844;text-decoration:none}
+    footer a:hover{color:var(--red)}
+    .footer-nav{display:flex;gap:24px}
+
+    /* REVEAL */
+    .reveal{opacity:0;transform:translateY(24px);transition:opacity .65s ease,transform .65s ease}
+    .reveal.visible{opacity:1;transform:none}
+
+    /* RESPONSIVE */
+    @media(max-width:900px){
+      nav{padding:0 24px}
+      nav ul{display:none}
+      section{padding:64px 24px}
+      .hero{padding:60px 24px 56px}
+      .about-layout,.services-layout,.exp-grid,.contact-layout{grid-template-columns:1fr;gap:40px}
+      .services-sticky{position:static}
+      .sg3{grid-template-columns:1fr}
+      .portfolio-header,.portfolio-track{padding:0 24px}
+      .hero-row{flex-direction:column;align-items:flex-start}
+      footer{flex-direction:column;text-align:center}
+      .edu-grid{grid-template-columns:1fr}
+    }
+  </style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <a class="nav-logo" href="#">
+    <img src="images/logo-circle.jpg" alt="Laura Pociello logo">
+    <span>L</span>aura Pociello
+  </a>
+  <ul>
+    <li><a href="#sobre-mi">Sobre mí</a></li>
+    <li><a href="#portfolio">Portfolio</a></li>
+    <li><a href="#servicios">Servicios</a></li>
+    <li><a href="#experiencia">Experiencia</a></li>
+    <li><a href="#contacto" class="nav-cta">Contratarme</a></li>
+  </ul>
+</nav>
+
+<!-- HERO -->
+<div class="hero">
+  <div class="reveal">
+    <p class="hero-label">Disponible para proyectos remotos</p>
+    <h1>Laura<br><em>Pociello</em><br>Esmel</h1>
+    <div class="hero-row">
+      <p class="hero-sub">Diseñadora gráfica especializada en branding, social media, print y web. Basada en Huesca, trabajo con clientes en todo el mundo.</p>
+      <div class="hero-btns">
+        <a href="#portfolio" class="btn btn-red">Ver mi trabajo →</a>
+        <a href="https://wa.me/34686689122?text=Hola%20Laura!%20He%20visto%20tu%20portfolio" class="btn btn-wa" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.115.554 4.1 1.524 5.823L.057 23.927a.5.5 0 0 0 .608.63l6.33-1.659A11.945 11.945 0 0 0 12 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.818a9.819 9.819 0 0 1-5.017-1.378l-.36-.213-3.726.977.997-3.634-.235-.374A9.818 9.818 0 0 1 2.182 12C2.182 6.57 6.57 2.182 12 2.182S21.818 6.57 21.818 12 17.43 21.818 12 21.818z"/></svg>
+          WhatsApp
+        </a>
+        <a href="https://calendly.com/laurape26" class="btn btn-cal" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg>
+          Agendar llamada
+        </a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- MARQUEE -->
+<div class="mq-wrap">
+  <div class="mq-track">
+    <span>Branding</span><span class="dot">✦</span><span>Social Media</span><span class="dot">✦</span><span>Web Design</span><span class="dot">✦</span><span>Print</span><span class="dot">✦</span><span>Identidad Corporativa</span><span class="dot">✦</span><span>Editorial</span><span class="dot">✦</span><span>Packaging</span><span class="dot">✦</span><span>WordPress</span><span class="dot">✦</span><span>Marketing Digital</span><span class="dot">✦</span><span>Branding</span><span class="dot">✦</span><span>Social Media</span><span class="dot">✦</span><span>Web Design</span><span class="dot">✦</span><span>Print</span><span class="dot">✦</span><span>Identidad Corporativa</span><span class="dot">✦</span><span>Editorial</span><span class="dot">✦</span><span>Packaging</span><span class="dot">✦</span><span>WordPress</span><span class="dot">✦</span><span>Marketing Digital</span><span class="dot">✦</span>
+  </div>
+</div>
+
+<!-- ABOUT -->
+<section id="sobre-mi" class="about-bg">
+  <div class="about-layout">
+    <div class="reveal">
+      <p class="eyebrow">01 / Sobre mí</p>
+      <h2>Hola, soy<br><em>Laura</em></h2>
+      <div class="about-text">
+        <p>Soy diseñadora gráfica con base en <strong>Huesca, España</strong>, apasionada por crear piezas visuales que realmente conecten con la gente. Me muevo igual de cómoda en branding corporativo que en campañas de redes sociales, maquetación editorial o interfaces web.</p>
+        <p>Llevo trabajando de forma <strong>100% remota</strong> con clientes en España, Latinoamérica y Europa, y me encanta el reto de adaptarme a cada marca y sector — desde startups de salud hasta deportes o grandes empresas tecnológicas.</p>
+        <p>Para mí el diseño no es solo estética: es <strong>comunicación con intención</strong>. Cada proyecto empieza con escuchar bien y termina con algo que realmente funciona.</p>
+      </div>
+      <div class="about-tags">
+        <span class="about-tag">Branding</span>
+        <span class="about-tag">Social Media</span>
+        <span class="about-tag">Diseño Web</span>
+        <span class="about-tag">Print</span>
+        <span class="about-tag">Editorial</span>
+        <span class="about-tag">WordPress</span>
+      </div>
+    </div>
+    <div class="reveal">
+      <div class="about-photo-box">
+        <img src="images/foto-laura.jpg" alt="Laura Pociello Esmel — Diseñadora Gráfica">
+        <div class="about-photo-label">Laura Pociello · Huesca, Spain</div>
+      </div>
+      <div class="stats-row">
+        <div><div class="stat-num">4<span>+</span></div><div class="stat-lbl">Años experiencia</div></div>
+        <div><div class="stat-num">10<span>+</span></div><div class="stat-lbl">Herramientas</div></div>
+        <div><div class="stat-num">∞</div><div class="stat-lbl">Alcance global</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PORTFOLIO -->
+<section id="portfolio" class="portfolio-section">
+  <div class="portfolio-header reveal">
+    <div>
+      <p class="eyebrow">02 / Portfolio</p>
+      <h2>Proyectos<br><em>seleccionados</em></h2>
+    </div>
+    <p class="portfolio-hint">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+      Desliza para ver más
+    </p>
+  </div>
+  <div class="portfolio-scroll" id="portfolioScroll">
+    <div class="portfolio-track">
+
+      <!-- 1 TOGETHERsports branding -->
+      <div class="port-card">
+        <div class="port-img">
+          <img src="images/together-mockup.jpg" alt="TOGETHERsports branding">
+          <span class="port-badge pb-brand">Branding</span>
+        </div>
+        <div class="port-body">
+          <p class="port-tag">Branding · Deportes</p>
+          <p class="port-name">TOGETHERsports</p>
+          <p class="port-desc">Identidad visual completa: logo, paleta, tipografía, packaging y aplicaciones para plataforma deportiva.</p>
+        </div>
+      </div>
+
+      <!-- 2 TOGETHERsports social media -->
+      <div class="port-card">
+        <div class="port-img">
+          <img src="images/together-social.png" alt="TOGETHERsports social media">
+          <span class="port-badge pb-social">Social Media</span>
+        </div>
+        <div class="port-body">
+          <p class="port-tag">Social Media · Marketing</p>
+          <p class="port-name">TOGETHERsports — RRSS</p>
+          <p class="port-desc">Creación y gestión de redes sociales, contenido y estrategia para campaña deportiva en Instagram.</p>
+        </div>
+      </div>
+
+      <!-- 3 Casiglo social media inmobiliaria -->
+      <div class="port-card">
+        <div class="port-img">
+          <img src="images/social-inmobiliaria.png" alt="Casiglo social media">
+          <span class="port-badge pb-remote">Remote</span>
+        </div>
+        <div class="port-body">
+          <p class="port-tag">Social Media · Remote</p>
+          <p class="port-name">Casiglo</p>
+          <p class="port-desc">Diseño y gestión de redes sociales para cliente inmobiliario. Contenido visual y estrategia de marca.</p>
+        </div>
+      </div>
+
+      <!-- 4 Nationwide Legal branding -->
+      <div class="port-card">
+        <div class="port-img">
+          <img src="images/nationwide-legal.png" alt="Nationwide Legal branding">
+          <span class="port-badge pb-brand">Branding</span>
+        </div>
+        <div class="port-body">
+          <p class="port-tag">Branding · Identidad Visual</p>
+          <p class="port-name">Nationwide Legal</p>
+          <p class="port-desc">Rediseño de identidad visual completa: logo, aplicaciones, papelería y rotulación de vehículo.</p>
+        </div>
+      </div>
+
+      <!-- 5 Cuerpo Verde packaging + social -->
+      <div class="port-card">
+        <div class="port-img">
+          <img src="images/cuerpo-verde.png" alt="Cuerpo Verde branding">
+          <span class="port-badge pb-brand">Branding</span>
+        </div>
+        <div class="port-body">
+          <p class="port-tag">Branding · Social Media</p>
+          <p class="port-name">Cuerpo Verde</p>
+          <p class="port-desc">Identidad visual completa y redes sociales para marca de suplementos. Packaging y creación de imagen.</p>
+        </div>
+      </div>
+
+      <!-- 6 Packaging Shameless -->
+      <div class="port-card">
+        <div class="port-img">
+          <img src="images/packaging-shameless.png" alt="Packaging Shameless">
+          <span class="port-badge pb-print">Print</span>
+        </div>
+        <div class="port-body">
+          <p class="port-tag">Diseño Gráfico · Packaging</p>
+          <p class="port-name">Shameless</p>
+          <p class="port-desc">Diseño de etiquetas y packaging para línea de productos. Identidad visual y aplicaciones.</p>
+        </div>
+      </div>
+
+      <!-- 7 Social media restaurante -->
+      <div class="port-card">
+        <div class="port-img">
+          <img src="images/social-restaurante.png" alt="Social media restaurante">
+          <span class="port-badge pb-social">Social Media</span>
+        </div>
+        <div class="port-body">
+          <p class="port-tag">Marketing · Diseño Gráfico</p>
+          <p class="port-name">Restauración &amp; Gastronomía</p>
+          <p class="port-desc">Creación de redes sociales, calendarios y estrategia de imagen para cliente del sector gastronómico.</p>
+        </div>
+      </div>
+
+      <!-- 8 Social media mascotas -->
+      <div class="port-card">
+        <div class="port-img">
+          <img src="images/social-mascotas.png" alt="Social media mascotas">
+          <span class="port-badge pb-social">Social Media</span>
+        </div>
+        <div class="port-body">
+          <p class="port-tag">Redes Sociales · Diseño Gráfico</p>
+          <p class="port-name">Social Media — Mascotas</p>
+          <p class="port-desc">Gestión visual y creación de contenido para marca del sector mascotas. Feed cohesionado y estrategia.</p>
+        </div>
+      </div>
+
+      <!-- 9 Editorial libro -->
+      <div class="port-card">
+        <div class="port-img">
+          <img src="images/editorial-libro.png" alt="Editorial El Que Yo No Soy">
+          <span class="port-badge pb-print">Print</span>
+        </div>
+        <div class="port-body">
+          <p class="port-tag">Diseño Editorial · Print</p>
+          <p class="port-name">El Que Yo No Soy</p>
+          <p class="port-desc">Maquetación completa y diseño de cubierta para publicación literaria.</p>
+        </div>
+      </div>
+
+      <!-- 10 Editorial revista -->
+      <div class="port-card">
+        <div class="port-img">
+          <img src="images/editorial-revista.png" alt="Sport & Fitness revista">
+          <span class="port-badge pb-print">Print</span>
+        </div>
+        <div class="port-body">
+          <p class="port-tag">Diseño Editorial · Revista</p>
+          <p class="port-name">Sport &amp; Fitness</p>
+          <p class="port-desc">Maquetación completa de revista mensual. Diseño de portada y maquetación interior.</p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- SERVICES -->
+<section id="servicios" class="services-bg">
+  <div class="services-layout">
+    <div class="services-sticky reveal">
+      <p class="eyebrow">03 / Servicios</p>
+      <h2>¿En qué<br><em>puedo ayudarte?</em></h2>
+      <p class="services-intro">Desde la idea hasta la entrega final. Trabajo de forma cercana con cada cliente para que el resultado sea exactamente lo que necesitan.</p>
+      <div style="margin-top:28px;display:flex;flex-direction:column;gap:10px">
+        <a href="https://wa.me/34686689122?text=Hola%20Laura!%20Me%20gustaría%20hablar%20sobre%20un%20servicio" class="btn btn-wa" style="width:fit-content" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.115.554 4.1 1.524 5.823L.057 23.927a.5.5 0 0 0 .608.63l6.33-1.659A11.945 11.945 0 0 0 12 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.818a9.819 9.819 0 0 1-5.017-1.378l-.36-.213-3.726.977.997-3.634-.235-.374A9.818 9.818 0 0 1 2.182 12C2.182 6.57 6.57 2.182 12 2.182S21.818 6.57 21.818 12 17.43 21.818 12 21.818z"/></svg>
+          Hablamos por WhatsApp
+        </a>
+        <a href="https://calendly.com/laurape26" class="btn btn-cal" style="width:fit-content" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg>
+          Agendar llamada gratuita
+        </a>
+      </div>
+    </div>
+    <div class="reveal">
+      <details class="accordion" open>
+        <summary><span class="acc-title">🎨 Branding e identidad visual</span><span class="acc-icon"><svg width="12" height="12" viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 2v8M2 6h8"/></svg></span></summary>
+        <div class="acc-body">Creación de marcas desde cero o rediseño de identidades existentes.<ul><li>Logotipo y variantes</li><li>Manual de identidad corporativa</li><li>Aplicaciones (tarjetas, firma email, plantillas…)</li></ul></div>
+      </details>
+      <details class="accordion">
+        <summary><span class="acc-title">📱 Social Media &amp; Marketing</span><span class="acc-icon"><svg width="12" height="12" viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 2v8M2 6h8"/></svg></span></summary>
+        <div class="acc-body">Diseño y gestión de contenido para Instagram, LinkedIn, Facebook y TikTok.<ul><li>Feed y stories coherentes con la marca</li><li>Calendario editorial mensual</li><li>Creatividades para anuncios Meta Ads / LinkedIn Ads</li><li>Gestión de redes sociales</li></ul></div>
+      </details>
+      <details class="accordion">
+        <summary><span class="acc-title">🌐 Diseño Web &amp; WordPress</span><span class="acc-icon"><svg width="12" height="12" viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 2v8M2 6h8"/></svg></span></summary>
+        <div class="acc-body">Diseño y desarrollo de webs y tiendas online con WordPress.<ul><li>Web corporativa con WordPress + Avada</li><li>Tiendas online con WooCommerce</li><li>Landing pages de conversión</li><li>Diseño de interfaces y prototipos web</li></ul></div>
+      </details>
+      <details class="accordion">
+        <summary><span class="acc-title">🖨 Print &amp; Editorial</span><span class="acc-icon"><svg width="12" height="12" viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 2v8M2 6h8"/></svg></span></summary>
+        <div class="acc-body">Packaging, catálogos, revistas, libros y material impreso.<ul><li>Packaging y etiquetas</li><li>Catálogos y revistas</li><li>Papelería corporativa</li><li>Carteles y flyers</li></ul></div>
+      </details>
+      <details class="accordion">
+        <summary><span class="acc-title">✏️ Copywriting y contenido</span><span class="acc-icon"><svg width="12" height="12" viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 2v8M2 6h8"/></svg></span></summary>
+        <div class="acc-body">Textos para redes, web y campañas. El diseño funciona cuando el mensaje también lo hace.<ul><li>Copy para redes sociales</li><li>Textos para webs y landing pages</li><li>Guiones para vídeos cortos</li></ul></div>
+      </details>
+    </div>
+  </div>
+</section>
+
+<!-- EXPERIENCE -->
+<section id="experiencia" class="exp-section">
+  <div class="exp-layout">
+    <div class="reveal"><p class="eyebrow">04 / Experiencia</p><h2>Dónde he<br><em>trabajado</em></h2></div>
+    <div class="exp-grid">
+      <div>
+        <p class="exp-col-title red">Experiencia laboral</p>
+        <details class="exp-item" open>
+          <summary>
+            <div class="exp-sl"><div class="exp-co">Gran Empresa Tecnológica <span class="exp-badge">On-site</span></div><div class="exp-period">2025 – Presente</div></div>
+            <svg class="exp-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 18l6-6-6-6"/></svg>
+          </summary>
+          <div class="exp-body"><p class="exp-rl">Diseñadora Gráfica &amp; Web Developer</p><ul><li>Creación y desarrollo de webs con WordPress + Avada</li><li>E-commerce con WooCommerce</li><li>Branding y desarrollo gráfico para clientes corporativos</li></ul></div>
+        </details>
+        <details class="exp-item">
+          <summary>
+            <div class="exp-sl"><div class="exp-co">Freelance — Proyectos Propios <span class="exp-badge remote">Remote</span></div><div class="exp-period">2022 – 2024</div></div>
+            <svg class="exp-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 18l6-6-6-6"/></svg>
+          </summary>
+          <div class="exp-body"><p class="exp-rl">Diseñadora Gráfica &amp; Social Media</p><ul><li>Branding completo para marcas deportivas, legales y del sector salud</li><li>Gestión de redes sociales para pymes y autónomos</li><li>Diseño editorial: revistas, libros y packaging</li><li>Clientes en España, Latinoamérica y UK</li></ul></div>
+        </details>
+        <details class="exp-item">
+          <summary>
+            <div class="exp-sl"><div class="exp-co">BioPress Salud <span class="exp-badge remote">Remote</span></div><div class="exp-period">2024 – Presente</div></div>
+            <svg class="exp-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 18l6-6-6-6"/></svg>
+          </summary>
+          <div class="exp-body"><p class="exp-rl">Diseñadora Gráfica</p><ul><li>Diseño de UI para app de oncología (MD Madison Center)</li><li>Maquetación para farmacéuticas en Latinoamérica</li><li>Comunicación visual para contextos médicos</li></ul></div>
+        </details>
+        <details class="exp-item">
+          <summary>
+            <div class="exp-sl"><div class="exp-co">Casiglo <span class="exp-badge remote">Remote</span></div><div class="exp-period">2024 – Presente</div></div>
+            <svg class="exp-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 18l6-6-6-6"/></svg>
+          </summary>
+          <div class="exp-body"><p class="exp-rl">Social Media Designer</p><ul><li>Diseño de contenido visual para Instagram y LinkedIn</li><li>Estrategia y calendario editorial mensual</li><li>Creatividades para campañas de publicidad en redes</li></ul></div>
+        </details>
+      </div>
+      <div>
+        <p class="exp-col-title">Formación</p>
+        <div class="edu-grid">
+          <div class="edu-card"><h4>Diseño Gráfico y Comunicación</h4><p>Formación oficial — España</p></div>
+          <div class="edu-card"><h4>Desarrollo Web</h4><p>Udemy · Universidad Complutense</p></div>
+          <div class="edu-card"><h4>Marketing Digital</h4><p>Programa certificado — España</p></div>
+          <div class="edu-card"><h4>Adobe Creative Suite</h4><p>Certificación oficial Adobe</p></div>
+        </div>
+        <div style="margin-top:20px;padding:22px;border:1px solid var(--border);border-left:3px solid var(--red);border-radius:var(--r);background:var(--white)">
+          <p style="font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--red);margin-bottom:8px;font-family:var(--fh)">🌐 Remote First</p>
+          <p style="font-size:13px;color:var(--muted)">He trabajado con clientes en España, Latinoamérica y Europa, siempre en remoto. Comunicación clara, plazos cumplidos, resultados reales.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SKILLS -->
+<section id="skills" class="skills-bg">
+  <div class="skills-inner">
+    <div class="reveal"><p class="eyebrow">05 / Skills</p><h2>Herramientas<br><em>y habilidades</em></h2></div>
+    <div class="tab-nav">
+      <button class="tab-btn active" data-tab="design">🖥 Diseño</button>
+      <button class="tab-btn" data-tab="marketing">📱 Marketing</button>
+      <button class="tab-btn" data-tab="soft">✨ Soft skills</button>
+    </div>
+    <div class="tab-panel active" id="tab-design">
+      <div class="sg3">
+        <div>
+          <div class="skill-item"><span class="skill-name">Photoshop</span><div class="skill-bar"><div class="skill-fill" data-pct="95"></div></div><span class="skill-pct">95%</span></div>
+          <div class="skill-item"><span class="skill-name">Illustrator</span><div class="skill-bar"><div class="skill-fill" data-pct="90"></div></div><span class="skill-pct">90%</span></div>
+          <div class="skill-item"><span class="skill-name">InDesign</span><div class="skill-bar"><div class="skill-fill" data-pct="90"></div></div><span class="skill-pct">90%</span></div>
+          <div class="skill-item"><span class="skill-name">Canva</span><div class="skill-bar"><div class="skill-fill" data-pct="100"></div></div><span class="skill-pct">100%</span></div>
+        </div>
+        <div>
+          <div class="skill-item"><span class="skill-name">Figma</span><div class="skill-bar"><div class="skill-fill" data-pct="80"></div></div><span class="skill-pct">80%</span></div>
+          <div class="skill-item"><span class="skill-name">WordPress</span><div class="skill-bar"><div class="skill-fill" data-pct="85"></div></div><span class="skill-pct">85%</span></div>
+          <div class="skill-item"><span class="skill-name">Capcut / iMovie</span><div class="skill-bar"><div class="skill-fill" data-pct="75"></div></div><span class="skill-pct">75%</span></div>
+          <div class="skill-item"><span class="skill-name">AI Tools</span><div class="skill-bar"><div class="skill-fill" data-pct="80"></div></div><span class="skill-pct">80%</span></div>
+        </div>
+        <div>
+          <p style="font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);margin-bottom:12px;font-family:var(--fh)">Plataformas</p>
+          <div style="display:flex;gap:8px;flex-wrap:wrap"><span class="ptag">Adobe CC</span><span class="ptag">Figma</span><span class="ptag">Canva Pro</span><span class="ptag">WordPress</span><span class="ptag">WooCommerce</span><span class="ptag">Avada</span><span class="ptag">Capcut</span><span class="ptag">Midjourney</span></div>
+        </div>
+      </div>
+    </div>
+    <div class="tab-panel" id="tab-marketing">
+      <div class="sg3">
+        <div>
+          <div class="skill-item"><span class="skill-name">Social Media Ads</span><div class="skill-bar"><div class="skill-fill" data-pct="85"></div></div><span class="skill-pct">85%</span></div>
+          <div class="skill-item"><span class="skill-name">Content Strategy</span><div class="skill-bar"><div class="skill-fill" data-pct="80"></div></div><span class="skill-pct">80%</span></div>
+          <div class="skill-item"><span class="skill-name">Calendar Planning</span><div class="skill-bar"><div class="skill-fill" data-pct="90"></div></div><span class="skill-pct">90%</span></div>
+        </div>
+        <div>
+          <div class="skill-item"><span class="skill-name">Copywriting</span><div class="skill-bar"><div class="skill-fill" data-pct="75"></div></div><span class="skill-pct">75%</span></div>
+          <div class="skill-item"><span class="skill-name">Ads Management</span><div class="skill-bar"><div class="skill-fill" data-pct="70"></div></div><span class="skill-pct">70%</span></div>
+          <div class="skill-item"><span class="skill-name">SEO Básico</span><div class="skill-bar"><div class="skill-fill" data-pct="60"></div></div><span class="skill-pct">60%</span></div>
+        </div>
+        <div>
+          <p style="font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);margin-bottom:12px;font-family:var(--fh)">Plataformas</p>
+          <div style="display:flex;gap:8px;flex-wrap:wrap"><span class="ptag">Instagram</span><span class="ptag">LinkedIn</span><span class="ptag">Facebook</span><span class="ptag">TikTok</span><span class="ptag">Meta Ads</span><span class="ptag">Google Ads</span></div>
+        </div>
+      </div>
+    </div>
+    <div class="tab-panel" id="tab-soft">
+      <div class="sg3">
+        <div>
+          <div class="skill-item"><span class="skill-name">Creatividad</span><div class="skill-bar"><div class="skill-fill" data-pct="100"></div></div><span class="skill-pct">100%</span></div>
+          <div class="skill-item"><span class="skill-name">Atención al detalle</span><div class="skill-bar"><div class="skill-fill" data-pct="97"></div></div><span class="skill-pct">97%</span></div>
+        </div>
+        <div>
+          <div class="skill-item"><span class="skill-name">Trabajo en equipo</span><div class="skill-bar"><div class="skill-fill" data-pct="95"></div></div><span class="skill-pct">95%</span></div>
+          <div class="skill-item"><span class="skill-name">Comunicación remota</span><div class="skill-bar"><div class="skill-fill" data-pct="95"></div></div><span class="skill-pct">95%</span></div>
+        </div>
+        <div>
+          <div class="skill-item"><span class="skill-name">Gestión de clientes</span><div class="skill-bar"><div class="skill-fill" data-pct="88"></div></div><span class="skill-pct">88%</span></div>
+          <div class="skill-item"><span class="skill-name">Resolución de problemas</span><div class="skill-bar"><div class="skill-fill" data-pct="90"></div></div><span class="skill-pct">90%</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contacto" class="contact-bg">
+  <div class="contact-layout">
+    <div class="reveal">
+      <p class="eyebrow">06 / Contacto</p>
+      <h2>Hablemos<br><em>de tu proyecto</em></h2>
+      <p class="contact-lead">Cuéntame lo que necesitas. Te respondo en menos de 24h y te digo con total sinceridad si puedo ayudarte.</p>
+      <div class="contact-detail">
+        <div class="contact-row"><strong>Email</strong><a href="mailto:laurape26@gmail.com">laurape26@gmail.com</a></div>
+        <div class="contact-row"><strong>WhatsApp</strong><a href="https://wa.me/34686689122">+34 686 689 122</a></div>
+        <div class="contact-row"><strong>Ubicación</strong>Huesca, España · Remote</div>
+      </div>
+      <div class="contact-btns">
+        <a href="https://wa.me/34686689122?text=Hola%20Laura!%20Me%20gustaría%20hablar%20contigo" class="btn btn-wa" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.115.554 4.1 1.524 5.823L.057 23.927a.5.5 0 0 0 .608.63l6.33-1.659A11.945 11.945 0 0 0 12 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.818a9.819 9.819 0 0 1-5.017-1.378l-.36-.213-3.726.977.997-3.634-.235-.374A9.818 9.818 0 0 1 2.182 12C2.182 6.57 6.57 2.182 12 2.182S21.818 6.57 21.818 12 17.43 21.818 12 21.818z"/></svg>
+          Escríbeme
+        </a>
+        <a href="https://calendly.com/laurape26" class="btn btn-cal" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg>
+          Agendar llamada
+        </a>
+      </div>
+      <div class="socials">
+        <a class="social-link li" href="https://www.linkedin.com/in/laura-pociello-esmel" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 0 1-2.063-2.065 2.064 2.064 0 1 1 2.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+          LinkedIn
+        </a>
+        <a class="social-link ig" href="https://www.instagram.com/lauritapoci" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 1 0 0 12.324 6.162 6.162 0 0 0 0-12.324zM12 16a4 4 0 1 1 0-8 4 4 0 0 1 0 8zm6.406-11.845a1.44 1.44 0 1 0 0 2.881 1.44 1.44 0 0 0 0-2.881z"/></svg>
+          @lauritapoci
+        </a>
+      </div>
+    </div>
+    <form class="contact-form reveal" onsubmit="handleSubmit(event)">
+      <p style="font-size:13px;color:#5A5650;margin-bottom:8px">Te respondo en menos de 24h ✦</p>
+      <div><label>Tu nombre</label><input type="text" name="name" placeholder="María García" required></div>
+      <div><label>Email</label><input type="email" name="email" placeholder="maria@empresa.com" required></div>
+      <div><label>Teléfono / WhatsApp (opcional)</label><input type="tel" name="phone" placeholder="+34 600 000 000"></div>
+      <div><label>¿En qué puedo ayudarte?</label><textarea name="message" placeholder="Cuéntame tu proyecto: branding, social media, web…" required></textarea></div>
+      <button type="submit" class="btn btn-red" style="width:fit-content;border:none">Enviar mensaje →</button>
+    </form>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <a href="#" style="font-family:var(--fh);font-weight:800;font-size:13px;display:flex;align-items:center;gap:8px">
+    <img src="images/logo-circle.jpg" alt="" style="width:24px;height:24px;border-radius:50%;object-fit:cover">
+    <span style="color:var(--red)">L</span>aura Pociello Esmel
+  </a>
+  <nav class="footer-nav">
+    <a href="#sobre-mi">Sobre mí</a><a href="#portfolio">Portfolio</a><a href="#servicios">Servicios</a><a href="#experiencia">Experiencia</a><a href="#contacto">Contacto</a>
+  </nav>
+  <span>© 2026 Laura Pociello. All rights reserved.</span>
+</footer>
+
+<script>
+  // Scroll reveal
+  const io = new IntersectionObserver(entries => {
+    entries.forEach(e => {
+      if (e.isIntersecting) {
+        e.target.classList.add('visible');
+        [...e.target.parentElement.querySelectorAll('.reveal')].forEach((s,i) => setTimeout(() => s.classList.add('visible'), i*70));
+      }
+    });
+  }, {threshold:0.07});
+  document.querySelectorAll('.reveal').forEach(r => io.observe(r));
+
+  // Skill bars
+  function animateBars(panel) {
+    panel.querySelectorAll('.skill-fill').forEach((bar,i) => {
+      setTimeout(() => { bar.style.width = bar.getAttribute('data-pct')+'%'; }, i*60);
+    });
+  }
+  const sObs = new IntersectionObserver(entries => {
+    entries.forEach(e => {
+      if (e.isIntersecting) {
+        document.querySelectorAll('.tab-panel.active .skill-fill').forEach((bar,i) => {
+          setTimeout(() => { bar.style.width = bar.getAttribute('data-pct')+'%'; }, i*60);
+        });
+        sObs.unobserve(e.target);
+      }
+    });
+  }, {threshold:0.3});
+  const ss = document.querySelector('#skills');
+  if (ss) sObs.observe(ss);
+
+  // Tabs
+  document.querySelectorAll('.tab-btn').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const tab = btn.getAttribute('data-tab');
+      document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+      document.querySelectorAll('.tab-panel').forEach(p => p.classList.remove('active'));
+      btn.classList.add('active');
+      const panel = document.getElementById('tab-'+tab);
+      panel.classList.add('active');
+      panel.querySelectorAll('.skill-fill').forEach(b => b.style.width='0');
+      requestAnimationFrame(() => animateBars(panel));
+    });
+  });
+
+  // Drag-scroll portfolio
+  const scroll = document.getElementById('portfolioScroll');
+  let drag=false, sx, sl;
+  scroll.addEventListener('mousedown', e => { drag=true; sx=e.pageX-scroll.offsetLeft; sl=scroll.scrollLeft; scroll.style.userSelect='none'; });
+  document.addEventListener('mouseup', () => { drag=false; scroll.style.userSelect=''; });
+  scroll.addEventListener('mousemove', e => { if(!drag) return; e.preventDefault(); scroll.scrollLeft=sl-(e.pageX-scroll.offsetLeft-sx)*1.4; });
+
+  // Contact form
+  function handleSubmit(e) {
+    e.preventDefault();
+    const btn = e.target.querySelector('button');
+    btn.textContent='¡Enviado! ✓'; btn.style.background='#2ecc71';
+    setTimeout(() => { btn.textContent='Enviar mensaje →'; btn.style.background=''; e.target.reset(); }, 3500);
+  }
+</script>
+</body>
+</html>

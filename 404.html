@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>404 — Página no encontrada · Laura Pociello</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;700;800&family=Inter:wght@300;400&display=swap" rel="stylesheet">
+  <style>
+    :root { --bg:#191a2e; --red:#e63440; --white:#f0eee8; --muted:#8b8fa8; }
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      background: var(--bg);
+      color: var(--white);
+      font-family: 'Inter', sans-serif;
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 48px 24px;
+    }
+    .wrap { max-width: 480px; }
+    .num {
+      font-family: 'Syne', sans-serif;
+      font-size: clamp(80px, 20vw, 160px);
+      font-weight: 800;
+      line-height: 1;
+      background: linear-gradient(90deg, #e63440, #ff7b86, #ffd4d7, #ff7b86, #e63440);
+      background-size: 250% auto;
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      animation: shimmer 4s ease infinite;
+    }
+    @keyframes shimmer {
+      0% { background-position: 0% center; }
+      100% { background-position: 250% center; }
+    }
+    h1 {
+      font-family: 'Syne', sans-serif;
+      font-size: 22px;
+      font-weight: 800;
+      margin: 16px 0 8px;
+    }
+    p { color: var(--muted); font-size: 14px; line-height: 1.7; }
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      margin-top: 32px;
+      background: var(--red);
+      color: var(--white);
+      padding: 14px 28px;
+      font-family: 'Syne', sans-serif;
+      font-size: 13px;
+      font-weight: 700;
+      letter-spacing: .1em;
+      text-transform: uppercase;
+      text-decoration: none;
+      clip-path: polygon(0 0, calc(100% - 10px) 0, 100% 10px, 100% 100%, 10px 100%, 0 calc(100% - 10px));
+      transition: background .2s, transform .15s;
+    }
+    .btn:hover { background: #ff4550; transform: translateY(-2px); }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <div class="num">404</div>
+    <h1>Página no encontrada</h1>
+    <p>Parece que esta página se ha perdido en el proceso creativo. Volvamos al inicio.</p>
+    <a href="/" class="btn">Volver al portfolio →</a>
+  </div>
+</body>
+</html>
